@@ -1,0 +1,21 @@
+﻿@using EfCoreApp.Data
+@model Course
+
+<h2>Yeni Kurs Ekleme Formu</h2>
+<hr />
+<form asp-controller="Course" asp-action="Create" method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="mb-3">
+        <label asp-for="CourseName" class="form-label">Kursun Adı</label>
+        <input asp-for="CourseName" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="TrainerId" class="form-label">Eğitmen</label>
+        <select asp-for="TrainerId" asp-items="ViewBag.Trainers" class="form-select">
+            <option value="">Eğitmen Seçiniz</option>
+        </select>
+    </div>
+    
+    <button type="submit" class="btn btn-success">Kaydet</button>
+
+</form>

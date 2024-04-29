@@ -1,0 +1,25 @@
+﻿@using EfCoreApp.Data
+@model Student
+
+<h2>Yeni Öğrenci Kayıt Formu</h2>
+<hr />
+<form asp-controller="Student" asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="Studentname" class="form-label">Öğrenci Adı</label>
+        <input asp-for="Studentname" class="form-control" />
+    </div>
+    <div class="mb-3">
+    <label asp-for="Studentsurname" class="form-label">Öğrenci Soyadı</label>
+    <input asp-for="Studentsurname" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label">E-posta</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Phone" class="form-label">Telefon</label>
+        <input asp-for="Phone" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Kaydet</button>
+
+</form>

@@ -1,0 +1,29 @@
+﻿@using EfCoreApp.Data
+@model Trainer
+
+<h2>Yeni Eğitmen Kayıt Formu</h2>
+<hr />
+<form asp-controller="Trainer" asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="TrainerName" class="form-label">Eğitmen Adı</label>
+        <input asp-for="TrainerName" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="TrainerSurname" class="form-label">Eğitmen Soyadı</label>
+        <input asp-for="TrainerSurname" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="TrainerEmail" class="form-label">E-posta</label>
+        <input asp-for="TrainerEmail" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="TrainerPhone" class="form-label">Telefon</label>
+        <input asp-for="TrainerPhone" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="StartDate" class="form-label">Başlangıç Tarihi</label>
+        <input asp-for="StartDate" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Kaydet</button>
+
+</form>

@@ -1,0 +1,26 @@
+﻿@using EfCoreApp.Data
+@model IEnumerable<CourseRegister>
+
+<h2>Kurs Kayıt Listesi</h2>
+<hr />
+<table class=" text-center table table-bordered table-stripped">
+    <thead>
+        <tr>
+            <th style="width: 100px;">Kayıt ID</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Kayıt Olduğu Kurs</th>           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.RegId</td>
+                <td>@item.Student.Studentname</td>
+                <td>@item.Student.Studentsurname</td>
+                <td>@item.Course.CourseName</td>             
+            </tr>
+        }
+    </tbody>
+</table>

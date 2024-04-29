@@ -1,0 +1,11 @@
+﻿@using EfCoreApp.Data
+@model Student
+
+<p>
+    <b>@Model.Studentname @Model.Studentsurname</b> isimli kaydı silmek istiyor musunuz?
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="@Model.StudentId" />
+        <button type="submit" class="btn btn-danger">Sil</button>
+        <a asp-action="Index" class="btn btn-secondary">Vazgeç</a>
+    </form>
+</p>

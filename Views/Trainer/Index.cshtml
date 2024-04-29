@@ -1,0 +1,30 @@
+﻿@using EfCoreApp.Data
+@model IEnumerable<Trainer>
+
+<h2>Eğitmen Listesi</h2>
+<hr />
+<table class=" text-center table table-bordered table-stripped">
+    <thead>
+        <tr>
+            <th style="width: 100px;">Eğitmen ID</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th style="width: 150px;">İletişim Detayları</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TrainerId</td>
+                <td>@item.TrainerName</td>
+                <td>@item.TrainerSurname</td>
+                <td>
+                    <a asp-controller="Trainer" asp-action="Edit" asp-route-id="@item.TrainerId" class="btn btn-sm btn-warning">Görüntüle</a>
+                    <a asp-controller="Trainer" asp-action="Delete" asp-route-id="@item.TrainerId" class="btn btn-sm btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a class="btn btn-primary" href="/Trainer/Create">Yeni Eğitmen Ekle</a>

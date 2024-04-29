@@ -1,0 +1,12 @@
+﻿@using EfCoreApp.Data
+@model Course
+
+<p>
+    <b>@Model.CourseName</b> isimli kursu silmek istiyor musunuz?
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="@Model.CourseId" />
+        <button type="submit" class="btn btn-danger">Sil</button>
+        <a class="btn btn-secondary" asp-action="Index">Vazgeç</a>
+    </form>
+    
+</p>

@@ -1,0 +1,46 @@
+﻿@using EfCoreApp.Data
+@model Trainer
+
+<h2>Eğitmen Güncelleme Formu</h2>
+<hr />
+<div class="row">
+    <div class="col-8">
+        <form asp-controller="Trainer" asp-action="Edit" method="post">
+            <input type="hidden" asp-for="TrainerId" />
+            <div class="mb-3">
+                <label asp-for="TrainerName" class="form-label">Eğitmen Adı</label>
+                <input asp-for="TrainerName" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="TrainerSurname" class="form-label">Eğitmen Soyadı</label>
+                <input asp-for="TrainerSurname" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="TrainerEmail" class="form-label">E-posta</label>
+                <input asp-for="TrainerEmail" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="TrainerPhone" class="form-label">Telefon</label>
+                <input asp-for="TrainerPhone" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="StartDate" class="form-label">Başlangıç Tarihi</label>
+                <input asp-for="StartDate" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-success">Güncelle</button>
+            <a href="/Trainer/Index" class="btn btn-secondary">Listeye Dön</a>
+
+        </form>
+    </div>
+    <div class="col-4">
+        <h4>Verdiği Kurslar</h4>
+        <hr />
+        <ul>
+            @foreach (var item in Model.Courses)
+            {
+                <li>@item.CourseName</li>
+            }
+        </ul>
+    </div>
+</div>
+
